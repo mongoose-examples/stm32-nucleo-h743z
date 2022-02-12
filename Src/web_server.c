@@ -37,7 +37,7 @@ static void cb(struct mg_connection *c, int ev, void *ev_data, void *fn_data) {
 
 static void server(void *args) {
   mg_mgr_init(&mgr);
-  LOG(LL_INFO, ("Starting Mongoose v%s", MG_VERSION)); // Tell the world
+  MG_INFO( ("Starting Mongoose v%s", MG_VERSION)); // Tell the world
   void *c = mg_http_listen(&mgr, s_listening_address, cb, &mgr); // Web listener
   if (c == NULL) {
     BSP_LED_On(LED3); // Turn on RED led to indicate an error
