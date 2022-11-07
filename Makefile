@@ -2,7 +2,7 @@ include generated_sources.mk
 
 PROG = firmware
 
-MONGOOSE_FLAGS = -DMG_ARCH=MG_ARCH_FREERTOS_LWIP
+MONGOOSE_FLAGS = -DMG_ARCH=MG_ARCH_FREERTOS -DMG_ENABLE_LWIP=1
 MCU_FLAGS = -mcpu=cortex-m7 --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -DSTM32H743xx -DUSE_STM32H7XX_NUCLEO_144_MB1364 -DUSE_HAL_DRIVER -ffunction-sections -fstack-usage
 
 PROJECT_ROOT_PATH = $(realpath $(CURDIR)/../..)
